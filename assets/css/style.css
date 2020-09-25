@@ -1,0 +1,85 @@
+body {
+    background-color:lightgrey;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    font-family: sans-serif;
+    font-size: 25px;
+    text-align: center;
+}
+
+.container h2 {
+    margin: 0;
+    padding: 0;
+    background-color: purple;
+    border-radius: 50px;
+    padding: 10px 20px;
+    color: ivory;
+}
+
+.container h3 {
+    margin: 0;
+    padding: 20px 0 0 0;
+}
+
+.inside {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0px;
+    width: 100%;
+}
+
+button {
+    background-color: dimgray;
+    width: 250px;
+    font-size: 20px;
+    font-weight: bold;
+    color: ivory;
+    border: 2px solid dimgray;
+    border-radius: 15px;
+    margin-top: 20px;
+    padding: 10px 0;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: purple;
+    border-color:goldenrod;
+    color: ivory;
+}
+
+button:active {
+    background-color: rgb(161, 0, 161);
+    
+}
+
+button:focus {
+    outline: 0;
+}
+
+hr {
+    color: dimgray;
+    width: 60%;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    height: 1px;
+    background-color: dimgray;
+}
+
+#feedback {
+    color: dimgray;
+    font-style: italic;
+}
