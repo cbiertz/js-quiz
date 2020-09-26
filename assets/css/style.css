@@ -83,3 +83,8 @@ hr {
     color: dimgray;
     font-style: italic;
 }
+
+.hide {
+    display: none;
+  }
+  
