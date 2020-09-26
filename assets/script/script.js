@@ -45,21 +45,31 @@ let questions = [
 
 ]
 
-var count= 60;
-var counter = setInterval(timer, 1000);
 
-function timer() {
-    count = count -1;
-    if (count <= 0){
-        clearInterval(counter);
-        return;
-    }
+var timerEl = document.getElementById('countdown');
+var startBtn = document.getElementById('btnStart');
 
-    document.getElementById("timer").innerHTML=count + " secs";
+function countdown(){
+    var timeLeft= 90;
+
+    var timeInterval = setInterval(function() {
+        if (timeLeft > 1) {
+            timerEl.textContent = timeLeft + ' seconds remaining';
+            timeLeft--;
+        } else if (timeLeft === 1){
+            timerEl.textContent == timeLeft + ' second remaining';
+            timeLeft--;
+        } else {
+            timerEl.textContent = '';
+            clearInterval(timeInterval);
+        }
+    }, 1000);
 }
+
+startBtn.onclick = countdown;
+
 
 document.getElementById("btnStart").addEventListener("click",function() {
     document.getElementById("start-page").hidden = true;
     document.getElementById("quiz").hidden = false;
-    timer();
 });
