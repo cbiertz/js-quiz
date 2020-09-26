@@ -1,6 +1,6 @@
 let questions = [
     {
-        question : `Does this look like a game to you?`,
+        question: `Does this look like a game to you?`,
         choiceA: `Yes it does.`,
         choiceB: `No it doesn't`,
         choiceC: `I can't tell`,
@@ -44,3 +44,22 @@ let questions = [
     }
 
 ]
+
+var count= 60;
+var counter = setInterval(timer, 1000);
+
+function timer() {
+    count = count -1;
+    if (count <= 0){
+        clearInterval(counter);
+        return;
+    }
+
+    document.getElementById("timer").innerHTML=count + " secs";
+}
+
+document.getElementById("btnStart").addEventListener("click",function() {
+    document.getElementById("start-page").hidden = true;
+    document.getElementById("quiz").hidden = false;
+    timer();
+});

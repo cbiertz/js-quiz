@@ -12,12 +12,12 @@
             View High Scores
         </div>
         <div>
-            Time:
+            <span id="timer"></span>
         </div>
     </header>
     <main class="container" id="container">
         <!--Start Page HTML-->
-        <section class="start-page">
+        <section id="start-page" class="start-page">
             <div class="inside"><h2>Coding Quiz Challenge</h2></div>
             <div class="inside"><h3>Think you know JavaScript?</h3></div>
             <div class="inside">
@@ -26,10 +26,11 @@
             </div>
             <div class="inside"><button id="btnStart">Start</button></div>
         </section>
+        <!--End Start Page HTML-->
 
         <!--Quiz HTML-->
-        <section class="quiz">
-            <div class="inside" id="question"><h3>Think you know JavaScript?</h3></div>        
+        <section id="quiz" class="quiz" hidden>
+            <div class="inside" id="question"><h3>Is this a sample question?</h3></div>        
 
             <div class="btn-container">
                 <button id="ansBtnA"></button>
@@ -42,7 +43,9 @@
             <hr>
             <h3 id="feedback">answer</h3>
         </section>
+        <!--End Quiz HTML-->
 
+        <!--Score Page-->
 
     </main>
     <script src="./assets/script/script.js"></script>
