@@ -78,6 +78,7 @@ function getQuestions() {
         setTimeout(() => {
         showScores();
         }, 1000);
+   
     }
     else {
         setTimeout(() => {
@@ -118,11 +119,13 @@ function countdown(){
             timerEl.textContent = timeLeft + ' seconds remaining';
             timeLeft--;
         } else if (timeLeft === 1){
-            timerEl.textContent == timeLeft + ' second remaining';
+            timerEl.textContent = timeLeft + ' second remaining';
             timeLeft--;
-        } else {
+        }
+        else {
             timerEl.textContent = '';
             clearInterval(timeInterval);
+            showScores();
         }
     }, 1000);
 }
