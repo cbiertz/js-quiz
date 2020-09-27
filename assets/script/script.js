@@ -2,7 +2,7 @@ var timerEl = document.getElementById('countdown');
 var startBtn = document.getElementById('btnStart');
 var questionsEL = document.getElementById("questions");
 var choicesEl = document.getElementById("choices");
-var submitBtn = document.getElementById("submit");
+var btnSub = document.getElementById("btnSub");
 var fnameEl = document.getElementById("fname");
 var feedbackEl = document.getElementById("feedback");
 
@@ -107,10 +107,26 @@ function guess(id, guess) {
 
 function showScores() {
     var gameOverHtml = "<h1 >Result</h1>";
-    gameOverHtml += "<div class='result-container'><div><h3 id='score'> Your Score: " + exam.score + "</h3></div> <div> <form> <label for='fname'> <h3>Enter your name!</h3></label> <div><input type='text' id='fname' name='fname'></div><button id='btnSub'>Submit</button></form></div></div>";
+    gameOverHtml += "<div class='result-container'><div><h3 id='score'> Your Score: " + exam.score + "</h3></div> <div> <form> <label for='fname'> <h3>Enter your name!</h3></label> <div><input type='text' id='fname' name='fname'></div><button class='btnSub' id='btnSub' onclick='saveScore()'>Submit</button></form></div></div>";
     var element = document.getElementById("quiz");
     element.innerHTML = gameOverHtml;
+    
 }
+
+function saveScore() {
+    event.preventDefault();
+    
+    var fname = document.getElementById('fname').value;
+    if (fname.value !== ""){
+        var highscores = window.localStorage.getItem('highscores') || [];
+        var score = JSON.stringify(fname + ' ' + exam.score);
+    }
+    
+    window.localStorage.setItem('highscores', score);
+    window.location = "./high-scores.html";
+}
+
+
 
 var timeLeft= 60;
 function countdown(){
@@ -129,6 +145,9 @@ function countdown(){
         }
     }, 1000);
 }
+
+
+
 
 startQuiz()
 
