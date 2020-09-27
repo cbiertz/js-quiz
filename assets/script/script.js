@@ -117,14 +117,25 @@ function saveScore() {
     event.preventDefault();
     
     var fname = document.getElementById('fname').value;
-    if (fname.value !== ""){
-        var highscores = window.localStorage.getItem('highscores') || [];
-        var score = JSON.stringify(fname + ' ' + exam.score);
-    }
-    
-    window.localStorage.setItem('highscores', score);
-    window.location = "./high-scores.html";
+  if (fname !== "") {
+    var highscores =
+      JSON.parse(window.localStorage.getItem("highscores")) || [];
+
+    // create score object
+    var Score = {
+      score: exam.score,
+      name: fname
+    };
+
+    // save to localstorage
+    highscores.push(Score);
+    window.localStorage.setItem("highscores", JSON.stringify(highscores));
+
+    // take user to high scores page
+    window.location.href = "high-scores.html";
+  }
 }
+
 
 
 
@@ -145,9 +156,6 @@ function countdown(){
         }
     }, 1000);
 }
-
-
-
 
 startQuiz()
 
