@@ -15,7 +15,7 @@ load index.html in a browser to take the quiz. When ready, click the start butto
 https://cbiertz.github.io/js-quiz/
 
 ## Screenshots
-![Example screenshot](./js_quiz.png)
+![Example screenshot](./JS_quiz.png)
 
 ## Contribution
 Made with ❤️ by Chris Biertzer
