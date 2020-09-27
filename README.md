@@ -1,4 +1,4 @@
-# Christopher Biertzer Portfolio
+# JavaScript Quiz Application
 
 ## Purpose
 A Javascript challenge designed by UW Madison coding bootcamp, to build an interactive quiz.
